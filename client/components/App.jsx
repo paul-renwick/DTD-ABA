@@ -10,7 +10,6 @@ import blue from '@material-ui/core/colors/blue'
 import purple from '@material-ui/core/colors/purple'
 import Typography from '@material-ui/core/Typography'
 
-
 const theme = createMuiTheme({
   palette: {
     primary: blue,
@@ -21,7 +20,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: 'Roboto',
-    fontSize: 40
+    fontSize: 30
   }
 })
 
@@ -35,7 +34,7 @@ const App = () => {
           justify="center"
           alignitems="center">
           <Typography component="h5" variant="h5" gutterBottom>
-        Discrete Trial Data
+        DISCRETE TRIAL DATA
           </Typography>
 
         </Grid>

@@ -24,7 +24,15 @@ class LineChart extends React.Component {
           'rgba(75, 192, 192, 0.2)',
           'rgba(153, 102, 255, 0.2)',
           'rgba(255, 159, 64, 0.2)'
-        ]
+      ],
+      borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
       }
 
     }
@@ -50,7 +58,7 @@ class LineChart extends React.Component {
             options={{
               title: {
                 display: this.props.displayTitle,
-                text: 'Colour Matching',
+                text: this.props.target,
                 fontSize: 30
               },
               legend: {

@@ -75,10 +75,14 @@ class Inputs extends React.Component {
         <TextField 
         id="outlined-target"
         label="target"
-       
-        value={this.state.target}
+        value = {this.setState.target}
         variant="outlined"
         onChange={this.updateDisplay.target} />
+
+        <Button size="large"
+        color="primary"
+        onClick={() => target = 'WOW WORK PLZ'}
+        className='button'>Set Target</Button>
         </form>
 
          </Grid>
@@ -126,7 +130,7 @@ class Inputs extends React.Component {
         color="secondary"
          onClick={() =>
          {this.updateDisplay(0); session = []}}
-         className='button'>Reset</Button>
+         className='button'>New Session</Button>
          </Grid>
       </React.Fragment>
     )
