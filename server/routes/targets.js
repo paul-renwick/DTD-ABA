@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/db')
 
-router.get('/targets', (req, res) => {
+router.get('/', (req, res) => {
   db.getTargets()
     .then(targets => {
       res.send(targets)

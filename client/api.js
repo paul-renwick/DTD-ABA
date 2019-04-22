@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const targetUrl = 'http://localhost:3000/targets/'
+const targetUrl = 'http://localhost:3000/targets'
 
 export function newTarget (target, callback) {
   request
