@@ -1,4 +1,5 @@
 import React from 'react'
+
 //Material UI Imports
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -32,13 +33,11 @@ class Inputs extends React.Component {
   })
   }
 
-
   changeHandler = e => {
     this.setState({
       [e.target.name]: e.target.value,
     })
   }
-
 
   render () {
     return (
@@ -118,6 +117,7 @@ class Inputs extends React.Component {
          className='button'>Clear Data
         </Button>
       </SecondaryGrid>
+
     </React.Fragment>
     )
   }

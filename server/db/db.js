@@ -4,7 +4,8 @@ const connection = require('knex')(config)
 
 module.exports = {
   getTargets,
-  newTarget
+  newTarget,
+  editTarget
 }
 
 function getTargets (db = connection) {
@@ -16,4 +17,10 @@ function newTarget (target, db = connection) {
     .insert({
       target: target.name
     })
+}
+
+function editTarget (target, db = connection) {
+  return db('targets')
+    .where('id', target.id)
+    .update(target)
 }

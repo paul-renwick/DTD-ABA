@@ -9,7 +9,7 @@ export default class AddTarget extends React.Component {
       target: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    this.addWidget = this.addTarget.bind(this)
+    this.addTarget = this.addTarget.bind(this)
   }
 
   handleChange (e) {
@@ -28,7 +28,7 @@ export default class AddTarget extends React.Component {
         <form>
           <p><input placeholder='target' name='target'
             onChange={this.handleChange}
-            value={this.state.name}
+            value={this.state.target}
           /></p>
           <button type='button' onClick={this.addTarget}>Add Target</button>
           {' '}
