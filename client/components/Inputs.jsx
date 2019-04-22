@@ -66,14 +66,14 @@ class Inputs extends React.Component {
 
       <SecondaryGrid >
       <Button 
-        fullWidth="true"
+        fullWidth={true}
         size="large"
         variant="contained"
         color="primary"
         onClick={() => session.push(1)}
         className='button'>Correct</Button>
       <Button 
-        fullWidth="true"
+        fullWidth={true}
         size="large"
         variant="contained"
         color="primary"
@@ -81,7 +81,7 @@ class Inputs extends React.Component {
         className='button'>Prompt
         </Button>
       <Button 
-        fullWidth="true"
+        fullWidth={true}
         size="large"
         variant="contained"
         color="primary"
@@ -92,7 +92,7 @@ class Inputs extends React.Component {
 
       <SecondaryGrid>
         <Button 
-          fullWidth="true"
+          fullWidth={true}
           size="large"
           variant="contained"
           color="secondary" 
@@ -101,7 +101,7 @@ class Inputs extends React.Component {
           className='button'>Done
         </Button>
         <Button 
-          fullWidth="true"
+          fullWidth={true}
           size="large"
           variant="contained"
           color="secondary" 
@@ -110,7 +110,7 @@ class Inputs extends React.Component {
           className='button'>Plot Data
         </Button>
         <Button
-          fullWidth="true" 
+          fullWidth={true}
           size="large"
           variant="contained"
           color="secondary" 

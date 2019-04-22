@@ -1,6 +1,7 @@
 import React from 'react'
 import Inputs from './Inputs'
 import LineChart from './LineChart'
+import AddTarget from './AddTarget'
 
 //MATERIAL UI COMPONENTS
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
@@ -33,6 +34,7 @@ const App = () => {
           </Typography>
 
         </PrimaryGrid>
+        <AddTarget />
         <div className="content">
           <LineChart />
           <Inputs />
