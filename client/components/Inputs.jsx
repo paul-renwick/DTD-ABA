@@ -68,27 +68,27 @@ class Inputs extends React.Component {
       <br />
 
       <SecondaryGrid >
-        <Button 
-        fullWidth="true"
-        size="large"
-        variant="contained"
-        color="primary"
-        onClick={() => session.push(0)}
-        className='button'>Incorrect</Button>
-        <Button 
-        fullWidth="true"
-        size="large"
-        variant="contained"
-        color="primary"
-        onClick={() => session.push(0)}
-        className='button'>Prompt</Button>
-        <Button 
+      <Button 
         fullWidth="true"
         size="large"
         variant="contained"
         color="primary"
         onClick={() => session.push(1)}
         className='button'>Correct</Button>
+      <Button 
+        fullWidth="true"
+        size="large"
+        variant="contained"
+        color="primary"
+        onClick={() => session.push(0)}
+        className='button'>Prompt</Button>
+      <Button 
+        fullWidth="true"
+        size="large"
+        variant="contained"
+        color="primary"
+        onClick={() => session.push(0)}
+        className='button'>Incorrect</Button>
       </SecondaryGrid>
 
       <SecondaryGrid>
@@ -113,7 +113,7 @@ class Inputs extends React.Component {
           variant="contained"
           color="secondary" 
           onClick={() => {this.updateDisplay(0); session = []}}
-         className='button'>Reset</Button>
+         className='button'>Clear Data</Button>
       </SecondaryGrid>
     </React.Fragment>
     )
