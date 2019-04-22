@@ -1,15 +1,16 @@
 import React from 'react'
 //Material UI Imports
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
-
+import Button from '@material-ui/core/Button'
+import PrimaryGrid from './PrimaryGrid'
+import SecondaryGrid from './SecondaryGrid'
+// import PrimaryButton from './PrimaryButton'
+// import SecondaryButton from './SecondaryButton'
 
 let session = []
 const reducer = (accumulator, currentValue) => accumulator + currentValue
 export let sessionData = []
-export let target = [] //Not currently being used
 
 class Inputs extends React.Component {
 
@@ -17,14 +18,13 @@ class Inputs extends React.Component {
     super(props)
     this.state = {
       display: 0,
-      target: ''
+      target: 'Choose a target'
     }
   }
 
-  updateDisplay = (num, str) => {
+  updateDisplay = (num) => {
     this.setState({
       display: num,
-      target: str
     })
   }
 
@@ -36,94 +36,92 @@ class Inputs extends React.Component {
   }
 
 
+  changeHandler = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    })
+  }
+
 
   render () {
     return (
-      <React.Fragment>
-        <Grid 
-        container
-        direction="row"
-        justify="center"
-        alignitems="center"
-         className='display'>
+    <React.Fragment>
 
-      <Typography component="h5" variant="h5" gutterBottom>
-        Target: {this.state.target}
-      </Typography>
-      <Typography component="h5" variant="h5" gutterBottom>
-        {`${this.state.display}%`} Correct
-      </Typography>
-        </Grid>
+      <PrimaryGrid >
+      <Typography variant="headline">
+        Target: {this.state.target}</Typography>
+      </PrimaryGrid>
 
-        <Grid 
-        container
-        direction="row"
-        justify="space-evenly"
-        alignitems="center"
-         className='display'>
+      <PrimaryGrid>
+      <Typography variant="headline">
+        {`${this.state.display}%`} Correct </Typography>
+      </PrimaryGrid>
 
-        <form noValidate autoComplete="off">
+      <PrimaryGrid >
         <TextField 
         id="outlined-target"
         label="target"
-       
         variant="outlined"
-        onChange={this.updateDisplay.target} />
-        </form>
+        name="target"
+        onChange={this.changeHandler} />
+      </PrimaryGrid>
+      <br />
 
-         </Grid>
-
-        <Grid 
-        container
-        direction="row"
-        justify="space-evenly"
-        alignitems="center"
-         className='display'>
-
-        <Button size="large"
+      <SecondaryGrid >
+        <Button 
+        fullWidth="true"
+        size="large"
+        variant="contained"
         color="primary"
         onClick={() => session.push(0)}
         className='button'>Incorrect</Button>
-        <Button size="large"
+        <Button 
+        fullWidth="true"
+        size="large"
+        variant="contained"
         color="primary"
         onClick={() => session.push(0)}
         className='button'>Prompt</Button>
-        <Button size="large"
+        <Button 
+        fullWidth="true"
+        size="large"
+        variant="contained"
         color="primary"
         onClick={() => session.push(1)}
         className='button'>Correct</Button>
+      </SecondaryGrid>
 
-        </Grid>
-        <Grid 
-        container
-        direction="row"
-        justify="space-evenly"
-        alignitems="center"
-         className='display'>
-
-        <Button size="large"
-        color="secondary"
-        onClick={() =>
-           this.updateDisplay
-           (Math.round((session.reduce(reducer) / session.length) * 100))}
-            className='button'>Done</Button>
-        <Button size="large"
-        color="secondary"
-         onClick={() =>
-         sessionData.push(this.state.display) & console.log(sessionData)}
+      <SecondaryGrid>
+        <Button 
+          fullWidth="true"
+          size="large"
+          variant="contained"
+          color="secondary" onClick={() => this.updateDisplay
+          (Math.round((session.reduce(reducer) / session.length) * 100))}
+          className='button'>Done</Button>
+        <Button 
+          fullWidth="true"
+          size="large"
+          variant="contained"
+          color="secondary" 
+          onClick={() =>
+          sessionData.push(this.state.display) & console.log(sessionData)}
           className='button'>Plot Data</Button>
-        <Button size="large"
-        color="secondary"
-         onClick={() =>
-         {this.updateDisplay(0); session = []}}
+        <Button
+          fullWidth="true" 
+          size="large"
+          variant="contained"
+          color="secondary" 
+          onClick={() => {this.updateDisplay(0); session = []}}
          className='button'>Reset</Button>
-         </Grid>
-      </React.Fragment>
+      </SecondaryGrid>
+    </React.Fragment>
     )
   }
 }
 
 export default Inputs
+
 
 
 /* <button onClick={() => session.push('Incorrect')}

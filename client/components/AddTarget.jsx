@@ -6,10 +6,10 @@ export default class AddTarget extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-        target: ''
+      target: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    this.addWidget = this.addWidget.bind(this)
+    this.addWidget = this.addTarget.bind(this)
   }
 
   handleChange (e) {
@@ -18,7 +18,7 @@ export default class AddTarget extends React.Component {
     })
   }
 
-  addWidget (e) {
+  addTarget (e) {
     newTarget(this.state, this.props.finishAdd)
   }
 

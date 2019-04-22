@@ -1,15 +1,16 @@
 import React from 'react'
 import Inputs from './Inputs'
 import LineChart from './LineChart'
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 // //css imports
-import Grid from '@material-ui/core/Grid'
+// import Grid from '@material-ui/core/Grid'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import blue from '@material-ui/core/colors/blue'
 import purple from '@material-ui/core/colors/purple'
 import Typography from '@material-ui/core/Typography'
-
+import PrimaryGrid from './PrimaryGrid'
+// import AddTarget from './AddTarget'
 
 const theme = createMuiTheme({
   palette: {
@@ -21,7 +22,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: 'Roboto',
-    fontSize: 40
+    fontSize: 30
   }
 })
 
@@ -29,19 +30,15 @@ const App = () => {
   return (
     <React.Fragment>
       <MuiThemeProvider theme={theme}>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignitems="center">
-          <Typography component="h5" variant="h5" gutterBottom>
-        Discrete Trial Data
+        <PrimaryGrid>
+          <Typography variant="h3" gutterBottom>
+           DISCRETE TRIAL DATA
           </Typography>
 
-        </Grid>
+        </PrimaryGrid>
         <div className="content">
-          <Route path = '/'component={LineChart} />
-          <Route path ='/' component={Inputs} />
+          <LineChart />
+          <Inputs />
         </div>
       </MuiThemeProvider>
     </React.Fragment>
