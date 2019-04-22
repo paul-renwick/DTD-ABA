@@ -1,16 +1,13 @@
 import React from 'react'
 import Inputs from './Inputs'
 import LineChart from './LineChart'
-// import { Route } from 'react-router-dom'
 
-// //css imports
-// import Grid from '@material-ui/core/Grid'
+//MATERIAL UI COMPONENTS
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import blue from '@material-ui/core/colors/blue'
 import purple from '@material-ui/core/colors/purple'
 import Typography from '@material-ui/core/Typography'
-import PrimaryGrid from './PrimaryGrid'
-// import AddTarget from './AddTarget'
+import { PrimaryGrid } from './CustomMaterialUI'
 
 const theme = createMuiTheme({
   palette: {
@@ -31,7 +28,7 @@ const App = () => {
     <React.Fragment>
       <MuiThemeProvider theme={theme}>
         <PrimaryGrid>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h4" gutterBottom>
            DISCRETE TRIAL DATA
           </Typography>
 

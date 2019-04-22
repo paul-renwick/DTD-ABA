@@ -3,10 +3,7 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import PrimaryGrid from './PrimaryGrid'
-import SecondaryGrid from './SecondaryGrid'
-// import PrimaryButton from './PrimaryButton'
-// import SecondaryButton from './SecondaryButton'
+import { PrimaryGrid, SecondaryGrid } from './CustomMaterialUI'
 
 let session = []
 const reducer = (accumulator, currentValue) => accumulator + currentValue
@@ -81,14 +78,16 @@ class Inputs extends React.Component {
         variant="contained"
         color="primary"
         onClick={() => session.push(0)}
-        className='button'>Prompt</Button>
+        className='button'>Prompt
+        </Button>
       <Button 
         fullWidth="true"
         size="large"
         variant="contained"
         color="primary"
         onClick={() => session.push(0)}
-        className='button'>Incorrect</Button>
+        className='button'>Incorrect
+        </Button>
       </SecondaryGrid>
 
       <SecondaryGrid>
@@ -96,9 +95,11 @@ class Inputs extends React.Component {
           fullWidth="true"
           size="large"
           variant="contained"
-          color="secondary" onClick={() => this.updateDisplay
+          color="secondary" 
+          onClick={() => this.updateDisplay
           (Math.round((session.reduce(reducer) / session.length) * 100))}
-          className='button'>Done</Button>
+          className='button'>Done
+        </Button>
         <Button 
           fullWidth="true"
           size="large"
@@ -106,14 +107,16 @@ class Inputs extends React.Component {
           color="secondary" 
           onClick={() =>
           sessionData.push(this.state.display) & console.log(sessionData)}
-          className='button'>Plot Data</Button>
+          className='button'>Plot Data
+        </Button>
         <Button
           fullWidth="true" 
           size="large"
           variant="contained"
           color="secondary" 
           onClick={() => {this.updateDisplay(0); session = []}}
-         className='button'>Clear Data</Button>
+         className='button'>Clear Data
+        </Button>
       </SecondaryGrid>
     </React.Fragment>
     )

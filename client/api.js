@@ -7,7 +7,6 @@ export function newTarget (target, callback) {
     .post(targetUrl)
     .send(target)
     .end((err, res) => {
-      callback(err)
+      callbacl(err)
     })
 }
-
