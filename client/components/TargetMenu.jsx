@@ -4,7 +4,12 @@ import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 
+//API imports
+
+import { getTargets } from '../api'
+
 export default class TargetMenu extends React.Component {
+
   state = {
     anchorEl: null
   };
@@ -16,6 +21,13 @@ export default class TargetMenu extends React.Component {
   handleClose = () => {
     this.setState({ anchorEl: null })
   };
+
+  renderTargets (err, targets) {
+    this.setState({
+      error: err,
+      targets: targets || []
+    })
+  }
 
   render () {
     const { anchorEl } = this.state
@@ -34,10 +46,9 @@ export default class TargetMenu extends React.Component {
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
-          color="primary"
+    
         >
-        
-          <MenuItem onClick={this.handleClose}>Brush</MenuItem>
+          <MenuItem onClick={this.handleClose}>Bag</MenuItem>
           <MenuItem onClick={this.handleClose}>Ball</MenuItem>
           <MenuItem onClick={this.handleClose}>Balloon</MenuItem>
         </Menu>

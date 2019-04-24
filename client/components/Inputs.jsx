@@ -1,10 +1,14 @@
 import React from 'react'
 
+// Other components
+import TargetMenu from './TargetMenu'
+
 // Material UI Imports
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { PrimaryGrid, SecondaryGrid } from './CustomMaterialUI'
+
 
 let session = []
 const reducer = (accumulator, currentValue) => accumulator + currentValue
@@ -54,9 +58,10 @@ class Inputs extends React.Component {
         </PrimaryGrid>
 
         <PrimaryGrid >
+          <TargetMenu />
           <TextField
             id="outlined-target"
-            label="target"
+            label="New target"
             variant="outlined"
             name="target"
             onChange={this.changeHandler} />

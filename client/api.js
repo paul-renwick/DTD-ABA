@@ -14,7 +14,6 @@ export function newTarget (target, callback) {
 export function getTargets (callback) {
   request
     .get(targetUrl)
-    
     .end((err, res) => {
       callback(err, res.body)
     })
