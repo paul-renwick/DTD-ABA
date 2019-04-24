@@ -2,6 +2,8 @@ import React from 'react'
 
 import { newTarget } from '../api'
 
+// need to write finish add
+
 export default class AddTarget extends React.Component {
   constructor (props) {
     super(props)
@@ -25,6 +27,7 @@ export default class AddTarget extends React.Component {
   render () {
     return (
       <div className='add-target'>
+
         <form>
           <p><input placeholder='target' name='target'
             onChange={this.handleChange}
@@ -34,6 +37,7 @@ export default class AddTarget extends React.Component {
           {' '}
           <a href='#' onClick={this.props.finishAdd}>Cancel</a>
         </form>
+
       </div>
     )
   }
