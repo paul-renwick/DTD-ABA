@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Line } from 'react-chartjs-2'
 import { sessionData, target } from './Inputs'
-import Grid from '@material-ui/core/Grid'
+import { PrimaryGrid } from './CustomMaterialUI'
 
 class LineChart extends React.Component {
   constructor (props) {
@@ -32,25 +32,20 @@ class LineChart extends React.Component {
 
   static defaultProps = {
     displayTitle: true,
-    displayLegend: false, 
+    displayLegend: false,
     legendPosition: 'left'
   }
-
 
   render () {
     return (
       <React.Fragment>
-           <Grid
-          container
-          direction="row"
-          justify="center"
-          alignitems="center">
+        <PrimaryGrid>
           <Line
             data={this.state.chartData}
             options={{
               title: {
                 display: this.props.displayTitle,
-                text: 'Colour Matching',
+                text: '',
                 fontSize: 30
               },
               legend: {
@@ -59,7 +54,7 @@ class LineChart extends React.Component {
               },
               maintainAspectRatio: false
             }} />
-        </Grid>
+        </PrimaryGrid>
       </React.Fragment>
     )
   }
