@@ -2,7 +2,7 @@ import React from 'react'
 import Inputs from './Inputs'
 import LineChart from './LineChart'
 import AddTarget from './AddTarget'
-
+import TargetMenu from './TargetMenu'
 //MATERIAL UI COMPONENTS
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import blue from '@material-ui/core/colors/blue'
@@ -19,6 +19,7 @@ const theme = createMuiTheme({
     danger: 'orange'
   },
   typography: {
+    useNextVariants: true,
     fontFamily: 'Roboto',
     fontSize: 30
   }
@@ -36,6 +37,7 @@ const App = () => {
 
         </PrimaryGrid>
         <div className="content">
+          <TargetMenu />
           <LineChart />
           <Inputs />
         </div>

@@ -44,12 +44,12 @@ class Inputs extends React.Component {
       <React.Fragment>
 
         <PrimaryGrid >
-          <Typography variant="headline">
+          <Typography variant="h5">
         Target: {this.state.target}</Typography>
         </PrimaryGrid>
 
         <PrimaryGrid>
-          <Typography variant="headline">
+          <Typography variant="h5">
             {`${this.state.display}%`} Correct </Typography>
         </PrimaryGrid>
 

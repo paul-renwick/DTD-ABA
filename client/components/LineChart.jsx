@@ -31,6 +31,7 @@ class LineChart extends React.Component {
   }
 
   static defaultProps = {
+    display: false,
     displayTitle: true,
     displayLegend: false,
     legendPosition: 'left'
