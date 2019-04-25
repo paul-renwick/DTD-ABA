@@ -3,6 +3,9 @@ import React from 'react'
 // Other components
 import TargetMenu from './TargetMenu'
 
+//API
+import { newTarget } from '../api'
+
 // Material UI Imports
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -22,11 +25,14 @@ class Inputs extends React.Component {
       display: 0,
       target: 'Choose a target'
     }
+    this.changeHandler = this.changeHandler.bind(this)
+    this.addTarget = this.addTarget.bind(this)
   }
 
-  updateDisplay = (num) => {
+  updateDisplay = (num, str) => {
     this.setState({
-      display: num
+      display: num,
+      target: str
     })
   }
 
@@ -41,6 +47,10 @@ class Inputs extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  addTarget (e) {
+    newTarget(this.state, this.props.finishAdd)
   }
 
   render () {
@@ -104,6 +114,7 @@ class Inputs extends React.Component {
             (Math.round((session.reduce(reducer) / session.length) * 100))}
             className='button'>Done
           </Button>
+
           <Button
             fullWidth={true}
             size="large"
@@ -113,6 +124,16 @@ class Inputs extends React.Component {
               sessionData.push(this.state.display) & console.log(sessionData)}
             className='button'>Plot Data
           </Button>
+
+          <Button
+            fullWidth={true}
+            size="large"
+            variant="contained"
+            color="secondary"
+            onClick={this.addTarget(this.state.target, this.state.display)}
+            className='button'>Save Data 
+          </Button>
+
           <Button
             fullWidth={true}
             size="large"

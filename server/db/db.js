@@ -15,7 +15,8 @@ function getTargets (db = connection) {
 function newTarget (target, db = connection) {
   return db('targets')
     .insert({
-      target: target.target
+      target: target.target,
+      scores: target.display
     })
 }
 
